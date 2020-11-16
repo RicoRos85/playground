@@ -1,1 +1,1 @@
-This is a README.md file.
+This folder is for testing javascript and API's.
