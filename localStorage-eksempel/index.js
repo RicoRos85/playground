@@ -1,3 +1,13 @@
+/*
+ * EXAMPLE - localStotage
+ *
+ * A very simple example of how to use the
+ * localStorage functionality in javascript
+ * to save a name on submit.
+*/
+
+
+// Save all elements on index.html i variables
 const rememberDiv   = document.querySelector('.remember');
 const forgetDiv     = document.querySelector('.forget');
 const form          = document.querySelector('form');
@@ -8,20 +18,24 @@ const h1            = document.querySelector('h1');
 
 const personalGreeting = document.querySelector('.personal-greeting');
 
+// Prevent form from firing on default
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 });
 
+// Add eventListener to if Submit Button is clicked and run function
 submitBtn.addEventListener('click', function() {
     localStorage.setItem('navn', nameInput.value);
     nameDisplayCheck();
 });
 
+// Add eventListener to if Forget Button is clicked and run function
 forgetBtn.addEventListener('click', function() {
     localStorage.removeItem('navn');
     nameDisplayCheck();
 }); 
 
+// Function to display name and hide/show elements
 function nameDisplayCheck() {
     if(localStorage.getItem('navn')) {
         let name = localStorage.getItem('navn');
@@ -41,4 +55,5 @@ function nameDisplayCheck() {
     }
 }
 
+// Run nameDisplayCheck() on page load
 document.body.onload = nameDisplayCheck;
