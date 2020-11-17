@@ -10,21 +10,22 @@
 	<header>
 		<h1>Vores hjemmeside</h1>
 	</header>
-	<form action="">
-
-		<div class="remember">
-			<label for="writeName">Gem dit navn i localStorage:</label>
-			<input type="text" id="writeName" required>
-			<input type="submit" id="submitName" value="Send">
-		</div>
-
-		<div class="forget">
-			<label for="forgetName">Jeg vil glemmes:</label>
-			<input type="reset" id="forgetName" value="Glem">
-		</div>
-		
-	</form>
+	
 	<main>
+		<form action="">
+
+			<div class="remember">
+				<label for="writeName">Gem navn i localStorage:</label>
+				<input type="text" id="writeName" placeholder="Dit navn" required>
+				<input type="submit" class="button" id="submitName" value="GEM">
+			</div>
+	
+			<div class="forget">
+				<label for="forgetName">Jeg vil glemmes:</label>
+				<input type="reset" class="button" id="forgetName" value="GLEM">
+			</div>
+			
+		</form>
 		<p class="personal-greeting">
 			Velkommen til vores hjemmeside
 		</p>
