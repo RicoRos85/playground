@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Dashboard</h1>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value" id="stat-total">0</span>
+            <span class="stat-label">Opgaver</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="stat-done">0</span>
+            <span class="stat-label">Færdige</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="stat-pending">0</span>
+            <span class="stat-label">Afventer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="task-input-area">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Ny opgave..."
+          autocomplete="off"
+        />
+        <div class="task-options">
+          <select id="task-priority">
+            <option value="low">Lav</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">Høj</option>
+          </select>
+          <button id="add-task-btn">Tilføj</button>
+        </div>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">Alle</button>
+        <button class="filter-btn" data-filter="pending">Aktive</button>
+        <button class="filter-btn" data-filter="done">Færdige</button>
+      </div>
+
+      <ul class="task-list" id="task-list">
+        <!-- Tasks rendered here -->
+      </ul>
+
+      <div class="sidebar-footer">
+        <button id="clear-done-btn">Ryd færdige</button>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="chat-area">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="status-dot"></div>
+          <span>Snak med Claude</span>
+        </div>
+        <div class="api-key-section">
+          <input
+            type="password"
+            id="api-key-input"
+            placeholder="Indsæt Anthropic API-nøgle..."
+          />
+          <button id="save-key-btn">Gem</button>
+          <span id="key-status"></span>
+        </div>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="message assistant">
+          <div class="message-bubble">
+            Hej! Jeg er Claude. Hvad kan jeg hjælpe dig med i dag? Du kan også tilføje opgaver i panelet til venstre for at holde overblik over din arbejdsdag.
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <textarea
+          id="chat-input"
+          placeholder="Skriv en besked... (Enter sender, Shift+Enter linjeskift)"
+          rows="1"
+        ></textarea>
+        <button id="send-btn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
